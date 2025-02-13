@@ -1,0 +1,48 @@
+{
+	"name": "test-network",
+	"version": "1.0.0",
+	"client": {
+		"tlsEnable": true,
+		"adminCredential": {
+			"id": "exploreradmin",
+			"password": "exploreradminpw"
+		},
+		"enableAuthentication": true,
+		"organization": "AirtelMSP",
+		"connection": {
+			"timeout": {
+				"peer": {
+					"endorser": "300"
+				},
+				"orderer": "300"
+			}
+		}
+	},
+	"channels": {
+		"mychannel": {
+			"peers": {
+				"peer0.Airtel.example.com": {}
+			}
+		}
+	},
+	"organizations": {
+		"AirtelMSP": {
+			"mspid": "AirtelMSP",
+			"adminPrivateKey": {
+				"path": "/tmp/crypto/peerOrganizations/Airtel.example.com/users/User1@Airtel.example.com/msp/keystore/priv_sk"
+			},
+			"peers": ["peer0.Airtel.example.com"],
+			"signedCert": {
+				"path": "/tmp/crypto/peerOrganizations/Airtel.example.com/users/User1@Airtel.example.com/msp/signcerts/User1@Airtel.example.com-cert.pem"
+			}
+		}
+	},
+	"peers": {
+		"peer0.Airtel.example.com": {
+			"tlsCACerts": {
+				"path": "/tmp/crypto/peerOrganizations/Airtel.example.com/peers/peer0.Airtel.example.com/tls/ca.crt"
+			},
+			"url": "grpcs://peer0.Airtel.example.com:7051"
+		}
+	}
+}

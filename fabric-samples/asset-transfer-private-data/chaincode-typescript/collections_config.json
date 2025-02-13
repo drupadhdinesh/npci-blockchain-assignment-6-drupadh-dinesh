@@ -1,0 +1,38 @@
+[
+ {
+   "name": "assetCollection",
+   "policy": "OR('AirtelMSP.member', 'JioMSP.member')",
+   "requiredPeerCount": 1,
+   "maxPeerCount": 1,
+   "blockToLive":1000000,
+   "memberOnlyRead": true,
+   "memberOnlyWrite": true,
+   "endorsementPolicy": {
+    "signaturePolicy":"OR('AirtelMSP.member','JioMSP.member')"
+  }   
+},
+ {
+   "name": "AirtelMSPPrivateCollection",
+   "policy": "OR('AirtelMSP.member')",
+   "requiredPeerCount": 0,
+   "maxPeerCount": 1,
+   "blockToLive":3,
+   "memberOnlyRead": true,
+   "memberOnlyWrite": false,
+   "endorsementPolicy": {
+     "signaturePolicy": "OR('AirtelMSP.member')"
+   }
+ },
+ {
+   "name": "JioMSPPrivateCollection",
+   "policy": "OR('JioMSP.member')",
+   "requiredPeerCount": 0,
+   "maxPeerCount": 1,
+   "blockToLive":3,
+   "memberOnlyRead": true,
+   "memberOnlyWrite": false,
+   "endorsementPolicy": {
+     "signaturePolicy": "OR('JioMSP.member')"
+   }
+  }
+]
